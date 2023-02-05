@@ -1,23 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../state/produk.dart';
+import '../WishList/wishlist_screen.dart';
 import 'Components/add_button.dart';
-import 'Components/appbar_home.dart';
-import 'Components/favorit.dart';
 import 'Components/list.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final Produk _p = Get.put(Produk());
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarHome(),
+      appBar: AppBar(
+        actions: [
+          Stack(
+            children: [
+              IconButton(
+                  onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => WishListScreen())),
+                  icon: const Icon(Icons.favorite_border)),
+            ],
+          )
+        ],
+      ),
       body: Column(
         children: [
-          const SizedBox(
-            height: 20,
-          ),
-          MyFavorite(),
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          // MyFavorite(),
           const SizedBox(
             height: 20,
           ),
