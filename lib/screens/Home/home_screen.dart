@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../state/produk.dart';
 import '../WishList/wishlist_screen.dart';
 import 'Components/add_button.dart';
 import 'Components/list.dart';
 
 class HomeScreen extends StatelessWidget {
-  final Produk _p = Get.put(Produk());
-  HomeScreen({super.key});
+  // final Produk _p = Get.put(Produk());
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
